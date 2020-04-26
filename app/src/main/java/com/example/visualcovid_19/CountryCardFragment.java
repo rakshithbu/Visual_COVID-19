@@ -96,8 +96,6 @@ public class CountryCardFragment extends Fragment {
                 if(tag ==null){
                     imageView.setImageResource(android.R.drawable.btn_star_big_on);
                     imageView.setTag("on");
-                    System.out.println("countryName====>"+countryName);
-                    ScrollingActivity.db.deleteStarredCountry(mCountryName);
                     ScrollingActivity.db.addStarredCounties(mCountryName);
                 }else{
                     if(tag == "on"){
@@ -107,24 +105,13 @@ public class CountryCardFragment extends Fragment {
                     }else{
                         imageView.setImageResource(android.R.drawable.btn_star_big_on);
                         imageView.setTag("on");
-                        ScrollingActivity.db.deleteStarredCountry(mCountryName);
                         ScrollingActivity.db.addStarredCounties(mCountryName);
                     }
 
                 }
-                System.out.println("db.allStarredCountries()===>"+ScrollingActivity.db.allStarredCountries());
             }
         });
         countryName.setText(mCountryName);
         totalCases.setText(mCasesCount);
-        String query = "select sqlite_version() AS sqlite_version";
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(":memory:", null);
-        Cursor cursor = db.rawQuery(query, null);
-        String sqliteVersion = "";
-        if (cursor.moveToNext()) {
-            sqliteVersion = cursor.getString(0);
-            System.out.println("sqlite version= " + sqliteVersion );
-
-        }
     }
 }

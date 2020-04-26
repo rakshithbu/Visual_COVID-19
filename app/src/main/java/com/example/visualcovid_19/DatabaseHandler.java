@@ -23,9 +23,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "CREATE TABLE " +  Util.TABLE_NAME + "("
                         + Util.KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                         + Util.KEY_NAME + " TEXT" +")";
-
-     System.out.println("CREATE_TABLE=====>"+CREATE_TABLE);
-
         sqLiteDatabase.execSQL(CREATE_TABLE);
     }
 

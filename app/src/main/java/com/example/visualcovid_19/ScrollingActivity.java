@@ -227,7 +227,6 @@ public class ScrollingActivity extends AppCompatActivity implements OnMapReadyCa
     public void addCountryCards(){
         starredCountries = db.allStarredCountries();
 
-        System.out.println("inside starred addCountryCards ======>"+starredCountries);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if(findViewById(R.id.cardsContainer) != null) {
@@ -250,7 +249,6 @@ public class ScrollingActivity extends AppCompatActivity implements OnMapReadyCa
                     e.printStackTrace();
                 }
             }
-            System.out.println("starred.toString()====>"+starred.toString());
             if(starred.length()>0) {
                 for (int i = 0; i < starred.length(); i++) {
                     try {
